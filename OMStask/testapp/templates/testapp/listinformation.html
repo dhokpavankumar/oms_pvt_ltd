@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{%block body_block%}
+    <div class="container" align="center">
+        <h1>Information List..</h1>
+        {%if student_list%}
+            <table border="2">
+                <thead>
+                    <th>SR.NO.</th>
+                    <th>Student name</th>
+                    <th>Email Id</th>
+                    <th>Mobile Number</th>
+
+                </thead>
+                {%for student in student_list%}
+                    <tr>
+                        <td>{{student.id}}</td>
+                        <td>{{student.name}}</td>
+                        <td>{{student.email}}</td>
+                        <td>{{student.mobile_number}}</td>
+
+                    </tr>
+                {%endfor%}
+            </table>
+        {%endif%}<br>
+        <a href="/pdf2" class="btn btn-primary btn">Download in folder</a>
+    </div>
+{%endblock%}
